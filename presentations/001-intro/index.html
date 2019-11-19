@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Software Delivery Procss 101</title>
+    <meta charset="utf-8">
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+        @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+        body {
+            font-family: 'Droid Serif';
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Yanone Kaffeesatz';
+            font-weight: normal;
+        }
+
+        .remark-code,
+        .remark-inline-code {
+            font-family: 'Ubuntu Mono';
+        }
+
+        .dp-leading {
+            background: url(https://lh5.googleusercontent.com/uWAVfDbVCVkRK-gHxK3QqUpL2dD3C7KWlXHoK_lwUUy430PU_cGv6WTZhWr-_L8gCeOOHrwB3yMz-0Bm01IPcp_dwFHvRZqomxRN8Qiae5FKoJ3i-g7A6gVfSVPOOuc0x6ad5lI-fL8)
+        }
+
+        .dp-regular {
+            background: url(https://lh4.googleusercontent.com/EaZPBLy_V_x-YI8DbTVnPZU2HwyVlXBnpKdZlwEtX4LCuxZludUvVCBwz3WoIsR-g1WUxTBiiSZVaEaQU483Eo5T13JDTEUDC_xYx6W7XcbQlX89bfxQjCbc1jhmRgN6JWUG1_VVZcU)
+        }
+        .remark-slide-content {
+            font-size: 22px;
+            padding: 4em 2em 2em 2em;
+            line-height:1.5em;
+        }
+
+        .remark-slide-content h1 {
+            font-size:46px;
+            line-height:1.5em;
+        }
+
+        #presenter-creds {
+            font-weight: bold;
+            text-align: right;
+            vertical-align: bottom;
+            padding: 5em 0em 0em 0em;
+            line-height: 1.5em;
+        }
+
+        /* Two-column layout */
+        .left-column {
+            width: 50%;
+            float: left;
+        }
+        .right-column {
+            width: 49%;
+            float: right;
+            padding-top: 0em;
+            margin-top: 0em;
+            text-align: left;
+        }
+        .right {
+            float: right;
+            margin-left: 1em;
+        }
+        .right-column-img {
+            max-width:100%;
+            max-height:100%;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="source">
+
+class: dp-leading, center, middle
+
+# Software Delivery Process 101
+What it takes to deliver the code change
+<div id="presenter-creds">
+Sergii Sinienok<br />
+Cloud Architect @ Dev-Pro.net
+</div>
+---
+class: dp-regular
+# Agenda
+
+We're going to wear developer's hat. Take a look and touch the source code, deliver the real app.
+
+* Software Delivery and Development - Theory
+* Delivery Workflow for various types of apps
+* Live development and delivery demos
+* Lessons Learned and Best Practices
+
+---
+class: dp-regular
+
+# Software Delivery and Development - Definitions
+
+__Development__ - programming the chain of actions and conditions in order to achieve the expected system reactions upon the defined inputs.
+
+__Delivery__ - programming the chain of actions and conditions in order to cost and time effectively satisfy the end customer needs, so to generate maximum revenue
+
+---
+class: dp-regular
+
+# Software Delivery and Development - Side by side
+
+.left-column[ ### Development
+* Strives to tech perfection
+* Is a good place for mental fights
+* The result fulfills only your and your mama demands
+* Expected to work on your local environment
+]
+.right-column[ ### Delivery
+* Strives to "Value on-time"
+* Is a good place for collaboration
+* The result fulfills a demand of thousands people
+* Needs an __infrastructure__ in order to work
+]
+
+---
+class: dp-regular
+
+# Delivery Workflow for various app types
+
+* Desktop App
+* Mobile App
+* Website
+* Public facing API
+* The service with UI Single Page Application (SPA), API, and other features.
+
+---
+class: dp-regular
+
+# Software Delivery - Build step
+
+* Construction of something that has an observable and tangible result.
+* Process of converting source code files into standalone software artifact(s) that can be run on a computer. Produce artifacts.
+
+### Functions of the Build step:
+
+* Version control/Tagging.
+* Code qualit check.
+* Compilation/Translation of the source code into executable instructions.
+---
+class: dp-regular
+
+# Delivery Workflow - Build Artifacts per Application type
+
+* __Desktop App__ - EXE or MSI files.
+* __Mobile App__ - .app (iOS) or .apk (Android) bundles.
+* __Website__ - a folder with files or archive.
+* __Public facing API__ - a folder with files or archive.
+* __The service with UI SPA, API, and other features__ - a folder with files or archive.
+
+["Build Artifacts per Application type"](https://github.com/dazmodel/code-delivery/blob/master/presentation/assets/Delivery Infrastructure per Application Type.png)
+---
+class: dp-regular
+
+# Software Delivery - Hosting Infrastructure
+
+* Facility(ies) that houses IT equipment, such as computing servers and networking kits. Provides basic utilities for it to work (electricity, cooling, etc.).
+* Software applications, such as web servers, DB servers, etc., installed on computing servers.
+* Maintenance service for all the above.
+* Physical and/or remote access to the IT equipment to configure and operate.
+* All the otther perks that make one infrastructure better from another.
+
+---
+class: dp-regular
+
+# Hosting Infrastructure for Desktop App
+
+* Communicates with an "outside world" via Internet.
+* All configuration is packed along with the main app file.
+* Distribution server - main source for end users to download the app from.
+* Runs on End User's local environment (Computer).
+* Extremely versatile envs, no control for the app.
+
+["Hosting Infrastructure for Desktop Application"](https://github.com/dazmodel/code-delivery/blob/master/presentation/assets/Hosting Infrastructure for Desktop Application.png)
+---
+class: dp-regular
+
+# Hosting Infrastructure for Mobile App
+
+* Communicates with an "outside world" via Internet.
+* All configuration is packed along with the main app file.
+* App Store - main source for end users to download the app from.
+* Runs on End User's local environment (Phone).
+* Computation Power and Network bandwith are strictly limited.
+
+["Hosting Infrastructure for Mobile Application"](https://github.com/dazmodel/code-delivery/blob/master/presentation/assets/Hosting Infrastructure for Mobile Application.png)
+---
+class: dp-regular
+
+# Hosting Infrastructure for Website
+
+* Configuration becames an Issue because of Secrets.
+* Static VS dynamic websites.
+* HTTP protocol is the main communication channel.
+* HTTP vs HTTPS.
+* Domain names.
+
+["Hosting Infrastructure for Website"](https://github.com/dazmodel/code-delivery/blob/master/presentation/assets/Hosting Infrastructure for Website.png)
+---
+class: dp-regular
+
+# Hosting Infrastructure for SPA with API and Services
+
+* SPA vs Website.
+* At least two domain names instead of one.
+* Website demo with dev tools (`static-website-example`).
+* SPA demo with dev tools.
+
+["Hosting Infrastructure for SPA with API and services"](https://github.com/dazmodel/code-delivery/blob/master/presentation/assets/Hosting Infrastructure for SPA with API and Services.png)
+---
+class: dp-regular
+
+# Software Delivery - Deploy Step
+
+All of the activities that make a software system available for use. Activities examples: Release, Installation, Uninstallation, Update, State Tracking, etc.
+
+We take our __Build Artifacts__ and make it __work as expected__ on existing __infrastructure__.
+
+__!!! Deploy Step MUST be automated as much as possible !!!__
+---
+class: dp-regular, center, middle
+
+# Demo #1: Manual app deployment from scratch
+
+---
+class: dp-regular
+
+# Demo Application - Requirements
+
+There should be the service to manage information about Marvel Heroes. This service should do the following:
+* Has the UI as SPA that will talk to API to manage data.
+* List all the Heroes available.
+* Create new Hero entries.
+* View details and Edit existing Hero BIOs.
+
+---
+class: dp-regular
+
+# What we'll be doing:
+
+1. Infrastructure:
+    1. Server for UI app.
+    2. Server for API.
+    3. DB Server - cloud-hosted.
+    4. Access to manage infrastructure
+2. Environment configuration:
+    1. Web server, corresponding packages and config for UI app.
+    2. API server, environment and app-level configs for API.
+    3. DB instance set up and config in the cloud.
+3. Network configuration and Integration testing.
+
+
+Note: We'll be using GCP for our infrastructure for this particular example.
+---
+class: dp-regular
+
+# UI Server - Infrastructure
+
+1. Spin up `n1-standard-1` Virtual Machine in GCP (Name: code-delivery-ui; Region: europe-west1; Boot Disk - Ubuntu 19.04; Firewall - Allow HTTP traffic)
+2. Configure SSH access there to be able to manage the server. Generate SSH key, then add to Compute Engine > Metadata > SSH Keys, test connection:
+
+    ```sh
+    ssh-keygen -t rsa -b 4096 -C "ansible"
+    cat ~/.ssh/ansible.pub | pbcopy
+
+    ssh -i ~/.ssh/ansible ansible@{public-ip}
+    ```
+
+Note: Usually it takes months to get the server up and running with Bare Metal.
+---
+class: dp-regular
+
+# UI Server - Environment configuration. NGINX installation
+
+* Greating NGINX user, allowing SSH for it:
+
+```sh
+sudo adduser nginx
+sudo usermod -aG sudo nginx
+
+sudo rsync --archive --chown=nginx:nginx ~/.ssh /home/nginx/
+```
+
+* SSH as nginx user:
+```sh
+ssh -i ~/.ssh/ansible nginx@{public-ip}
+```
+
+---
+class: dp-regular
+
+# UI Server - Environment configuration. NGINX installation
+
+* Install NGINX:
+
+```sh
+sudo apt update
+sudo apt install nginx
+
+sudo ufw allow 'Nginx HTTP' // Adding firewall rule.
+```
+
+* Test NGINX installation by opening http://{public-ip}/ in the browser.
+
+---
+class: dp-regular
+
+# UI Server - Environment configuration. App deployment
+
+* Build the app:
+
+```sh
+npm install && npm run build:prod:en
+```
+* Upload the build to the server:
+
+```sh
+sudo chown -R $USER:$USER /var/www/html // While SSHd to the server,
+                                        // Change the web folder owner
+rsync -avz -e 'ssh -i ~/.ssh/ansible' dist/browser/ nginx@35.240.97.91:/var/www/html
+```
+* Test the deployment by opening http://{public-ip}/ in the browser.
+---
+class: dp-regular
+
+# API Server - Infrastructure
+
+1. Spin up `n1-standard-1` Virtual Machine in GCP (Name: code-delivery-api; Region: europe-west1; Boot Disk - Ubuntu 19.04; Firewall - Allow HTTP traffic)
+2. Configure SSH access there to be able to manage the server. Generate SSH key, then add to Compute Engine > Metadata > SSH Keys, test connection:
+
+    ```sh
+    ssh-keygen -t rsa -b 4096 -C "ansible"
+    cat ~/.ssh/ansible.pub | pbcopy
+
+    ssh -i ~/.ssh/ansible ansible@{public-ip}
+    ```
+
+Note: Usually it takes months to get the server up and running with Bare Metal.
+
+---
+class: dp-regular
+
+# API Server - Environment configuration. NGINX installation
+
+* Greating NGINX user, allowing SSH for it:
+
+```sh
+sudo adduser nginx
+sudo usermod -aG sudo nginx
+
+sudo rsync --archive --chown=nginx:nginx ~/.ssh /home/nginx/
+```
+
+* SSH as nginx user:
+
+```sh
+ssh -i ~/.ssh/ansible nginx@{public-ip}
+```
+
+---
+class: dp-regular
+
+# API Server - Environment configuration. NGINX installation
+
+* Install NGINX:
+
+```sh
+sudo apt update
+sudo apt install nginx
+sudo ufw allow 'Nginx HTTP' // Adding firewall rule.
+```
+
+* Test NGINX installation by opening http://{public-ip}/ in the browser.
+
+---
+class: dp-regular
+
+# API Server - Environment configuration. NodeJS installation.
+
+NodeJS is an engine to run our API. Will not work without it:
+```sh
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.3.8/install.sh | bash //NVM
+source ~/.profile
+nvm ls-remote | grep -i "latest lts"
+
+nvm install v10.16.3
+nvm install v4.9.1 // For env inconsistency demo
+```
+
+---
+class: dp-regular
+
+# API Server - Environment configuration. App deployment.
+
+* Make a Build
+
+```sh
+npm install && npm run build
+```
+
+* Upload the build to the server:
+
+```sh
+rsync -avz -e 'ssh -i ~/.ssh/ansible' package.json nginx@{public-ip}:/home/nginx/code-delivery-api
+rsync -avz -e 'ssh -i ~/.ssh/ansible' dist nginx@{public-ip}:/home/nginx/code-delivery-api
+```
+---
+class: dp-regular
+
+# API Server - Environment configuration. App deployment.
+
+* Run the application (Uses the DB from the cloud)
+
+```sh
+export DATABASE_URL={url}
+npm i && npm run start
+```
+
+* Test locally - Works!
+
+```sh
+curl http://localhost:3000/
+```
+---
+class: dp-regular
+
+# API Server - Public access.
+
+In order to access our API via Internet, we need to set up a Reverse Proxy to route our HTTP calls from outside to localhost.
+Let's use NGINX for this purpose.
+
+```sh
+sudo nano /etc/nginx/sites-available/default
+```
+
+---
+class: dp-regular
+
+# API Server - Public access.
+
+```config
+server {
+    ...
+        location / {
+            proxy_pass http://localhost:3000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+    ...
+    }
+```
+---
+class: dp-regular
+
+# API Server - Public access.
+
+```sh
+sudo nginx -t
+sudo systemctl restart nginx
+npm i && npm run start // Restart the application
+```
+
+* Test our API:
+
+```sh
+curl http://{public-ip}/ //Should return Hello World!
+```
+---
+class: dp-regular
+
+# Manual app deployment - Pros and Cons
+
+* Pros:
+    * No Pros! If you think there are, you wrong!!!
+    * There's no excuse to deploy that way in a modern world!
+
+* Cons:
+    * Error-prone because of a ton of manual steps.
+    * Takes time. A lot!
+    * People owns expertize, not machines.
+    * Hard to document: UI and OS envs are subject to shange;
+    * Edge-cases.
+
+---
+class: dp-regular, center, middle
+
+# Application Versioning?
+---
+class: dp-regular
+
+# How to version the app?
+
+* Need a label in VCS (git tag): `build-1.0.1`
+* Name the build artifact appropriately: `myapp_build-1.0.1`
+* Make the app to show its version: UI label, API endpoint, etc.
+
+---
+class: dp-regular
+
+# Delivery Workflow - High-level cycle
+
+Source Code Under VCS => Build Artifact => Versioning =>
+<br />
+Infrastructure => Deploy => Success!
+---
+class: dp-regular
+
+# Delivery Workflow - Common Best Practices
+
+* All code shoul be under Version Control System (VCS). No exeptions.
+* Every deploy should be versioned.
+* At least two environments: Staging and Production.
+* Document everything that requires documentation.
+* Everything as a Code.
+* Automation Everywhere.
+
+---
+class: dp-regular
+
+# Demo #1 - Lessons Learned
+
+* Need to version my app appropriately.
+* Want to easily find the version number.
+* Want to configure my app somehow.
+* Automate Infrastructure routines.
+* Simplify the Deploy step.
+---
+class: dp-regular, center, middle
+
+# Demo #2: Handling The Lessons Learned
+---
+class: dp-regular
+
+# Handling The Lessons Learned - Level Set
+
+* Introduce the simplest Configuration Management possible - env vars.
+* Code Package, Environment Isolation. Docker.
+* App Versioning - the Right Way.
+* Infrastructure Automation, Infrastructure as Code.
+* Build and Deploy separation: `Build Once` best practice.
+* Deploy: Easy-Pizy.
+* Logging: Types and Troubleshooting.
+---
+class: dp-regular
+
+# Demo #2 - What we're going to do?
+
+* Deploy our UI and API apps to the cloud
+* Take a look at AWS Cloud
+* Cover our "lessons learned" with corresponding theory and practical examples
+---
+class: dp-regular
+
+# Config Management - WTF?
+
+__Configuration management (CM)__ is a systems engineering process for establishing and maintaining consistency of a product's attributes throughout its life.
+
+__WAAAAAAAT?__
+
+To keep it simple, the majority of apps require some initial information in order to launch and execute.
+
+---
+class: dp-regular
+
+# Config Management - Examples
+
+Our UI app configs. We need to know where the API lives (at least):
+```sh
+API_URI=http://localhost:3000/
+API_JWT=...
+```
+---
+class: dp-regular
+
+# Config Management - Examples
+
+Our API app configs. We need to know where the DB is and how to verify tokens (private key):
+```sh
+DATABASE_URL=...
+JWT_SECRET=your-secret-whatever
+```
+---
+class: dp-regular
+
+# Config Management - Ways to store configs
+
+* Hardcode/embed into source code
+* Store in config file
+* Store in DB
+* Environment Variables
+* Config Management systems (etcd, Hashi Corp Vault, etc.)
+---
+class: dp-regular
+
+# Code Package and Isolation - WHY?
+
+__Code Package__ - Standardize the delivery artifacts to simplify operation.
+__Isolation__ - Making our delivery artifct self-contained.
+
+(Went through Deckerfiles for UI and API)
+---
+class: dp-regular
+
+# Package and Isolation - HOW? Docker
+
+.left-column[
+* __Standard:__ Docker created the industry standard for containers, portable anywhere
+* __Lightweight:__ do not require an OS per application, driving higher server efficiencies and reducing server and licensing costs
+* __Secure:__ Docker provides the strongest default isolation capabilities in the industry
+]
+
+.right-column[
+<img src="https://www.docker.com/sites/default/files/d8/styles/large/public/2018-11/container-what-is-container.png?itok=vle7kjDj"
+class="right-column-img">
+</img>
+]
+---
+class: dp-regular
+
+# App Versioning - the Right Way
+
+* Versioning approach - ["SemVer"](https://semver.org/) as industry standard
+* Use Tags in Source Control (git, svn, tfs, etc.)
+* Make the app version easily accessible for users
+* Collect changelogs, make it widely accessible
+
+```sh
+git tag // Versions
+git log // Changelog
+```
+---
+class: dp-regular
+
+# Infrastructure Automation
+
+* "Machines" MUST own infrastructure details, not people
+* Document important infrastructure details along with its ["topology"](https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2017Q4/AWS-autolayout/AWS-Network-Diagram.png)
+* Automate the infrastructure routines as much as possible
+* Make your Infrastructure Automation repeatable
+* `Infrastructure as Code` best practice
+* Infrastructure State versioning
+
+(serverless.yml review + CloudFormation stack Designer)
+---
+class: dp-regular
+
+# Build and Deploy Steps Separation
+
+* __Build__ - producing and publishing application artifacts
+* __Deploy__ - delivering build artifacts to the environment, along with all the configuration required for it to launch
+* `Build once - deploy everywhere` best practice
+
+(AWS ECR review)
+---
+class: dp-regular
+
+# Deploy: Easy-Pizy
+
+* Deploy is as much of "no-event" as possible
+* `Anybody can deploy` as a best practice
+* `Deployment guru` as dangerous antipattern
+---
+class: dp-regular
+
+# Logging - must-have for the app
+
+* Log levels: DEBUG, INFO, WARN, ERROR, FATAL
+* Structured Logging vs Plain Text logs
+* Distributed Tracing
+* Internal and Customer-facing logs
+* Retention policy and costs
+
+(AWS CloudWatch walkthrough)
+---
+class: dp-regular
+
+# How to deliver new feature? - Add Heroe's Favorite Color
+
+* Create branch: `git checkout -b favorite-color`
+* Modify UI - test with local API
+* Modify API - test locally
+* Add DB migration, run on local DB
+* Create the Pull Request: description, approvals, merge
+* Deliver UI, API and migrations to the cloud from `master`
+---
+class: dp-regular
+
+# Favorite Color Feature - new branch. Why?
+
+* Isolates the scope of work
+* Allows to save half-baked results remotely without affecting the other teams
+* Locates the scope for dev and QA verification
+* Sandboxed Point of collaboration
+---
+class: dp-regular
+
+# Favorite Color Feature - Modify UI
+
+* Put the field on the form - `ui/src/app/modules/heroes/pages/hero-detail-page/hero-detail-page.component.html`(1)
+* Add it to formBuilder - `ui/src/app/modules/heroes/pages/hero-detail-page/hero-detail-page.component.ts` (2) error
+* Add field to data model - `ui/src/app/modules/heroes/shared/hero.model.ts` (3)
+
+The field was sent to API, not persisted in DB yet. Move on.
+---
+class: dp-regular
+
+# Favorite Color Feature - Modify API
+
+* Observe local DB, http://localhost:8080, `apidb.hero` table. No field
+* Add field to the data model - `api/src/entity/hero.ts` (1), notice in JSON on UI. Valdation Error
+* Add field processing to controller - `api/src/controller/hero.ts` (2). Not persisted in DB, hm?
+* Observe local DB, http://localhost:8080, `apidb.hero` table. No field?
+* Aha! Migration: `npm run typeorm migration:run`
+
+---
+class: dp-regular
+
+# Code Delivery vs DB changes delivery
+
+* Create migration for new field: `npm run typeorm migration:generate -- -n favorite-color`
+* Apply it to the local DB: `npm run typeorm migration:run`
+* Observe local DB, http://localhost:8080, `apidb.hero` table. Here it is!
+* Test UI + API locally. Bingo!
+---
+class: dp-regular
+
+# Feature delivery: AWS
+
+* Deply API: `sh deploy-api.sh`
+* Check with PostMan: fail, WTF?
+* Migrate: `npm run typeorm migration:run`
+* Check. Success!!!
+---
+class: dp-regular
+
+# Feature delivery: AWS
+
+* Deply UI: `sh deploy-ui.sh`
+* Check. Success!!!
+* Done!
+---
+class: dp-regular
+
+# Feature delivery: Sum up
+
+.left-column[
+__Good__
+* It is automagically versioned
+* We can access version info easily
+* High degree of automation
+* Deployment is simple and straightforward for engineers
+]
+
+.right-column[
+__Opportunities__
+* Running on local machine
+* Hard to use for non-engineers
+* No Changelogs Automation and presentation
+* Low visibility for business at scale
+]
+
+---
+class: dp-regular
+
+# Delivery Pipeline - godmode
+
+Does it make sense to invest at that degree?
+
+* "Time to Market" matters .... more and more ["Conway's law"](https://en.wikipedia.org/wiki/Conway%27s_law)
+* DevOps Research and Assessment (DORA) State Of DevOps 2018, p.12
+* ["DORA State Of DevOps 2019: ELITE group growth from 7% to 20% (~285% growth)"](https://cloud.google.com/blog/products/devops-sre/the-2019-accelerate-state-of-devops-elite-performance-productivity-and-scaling)
+---
+class: dp-regular
+
+# Delivery Pipeline - CI/CD. Where to start?
+
+Pick a tool => Build on it => Done :)
+
+__How to select CI/CD tool:__
+
+* CI/CD Hosting Requirement - Do you want/can manage it or prefer it as a service?
+* Budget for CI/CD - How often (once a months, week, day?) do you plan to produce builds/do deploys?
+* Features - Everything as Code? Enterprise Auth? Cloud-native?
+
+["Choosing a CI-CD Tool"](https://saucelabs.com/blog/choosing-a-ci-cd-tool)
+---
+class: dp-regular
+
+# Top-5 CI/CD tools 2019
+
+* Jenkins
+* CircleCI
+* TeamCity
+* Bamboo
+* GitLab
+
+["Best 14 CI/CD Tools You Must Know | Updated for 2019"](https://www.katalon.com/resources-center/blog/ci-cd-tools/)
+---
+class: dp-regular
+
+# Delivery Pipeline - DevOps?
+
+### DevOps is a set of practices, not a role! ["DevOps Manifesto"](https://sites.google.com/a/jezhumble.net/devops-manifesto/).
+
+Basic practices:
+* CAMS Value (Culture, Automation, Measurement, Share Knowledge) ["Culture eats strategy for breakfast"](https://www.managementcentre.co.uk/culture-eats-strategy-for-breakfast/)
+* Continuous Delivery. Conveyor-like process.
+* Everything as Code.
+* Continuous Monitoring.
+---
+class: dp-regular, center, middle
+
+# Demo #3 - Full Size <span style="text-decoration: line-through">SUV</span> CI/CD pipeline
+---
+class: dp-regular
+
+# Git repository
+
+* ["Structure"](https://bit.heartlandcommerce.com/projects/HC/repos/pos-datamanagement/browse)
+* Versioning: `git tag`
+---
+class: dp-regular
+
+# Release notes and knowledge sharing
+
+* ["Release Notes"](https://wiki.xenial.com/display/XERN/Xenial+Release+Notes+Home)
+* ["API Doc"](https://wiki.xenial.com/display/CLDE/DM+Swagger+API+documentation)
+* ["Project Knowledge Sharing"](https://wiki.xenial.com/pages/viewpage.action?pageId=178077412)
+---
+class: dp-regular
+
+# CI/CD tool and process visibility
+
+* ["Build"](https://cicd.xenial.com/job/Build/job/POS-DATAMANAGEMENT_2.7_TST/)
+* ["Deploy"](https://cicd.xenial.com/job/Delivery-DEV/job/Delivery-DEV-XENIAL-DATA-MANAGEMENT-API/)
+* ["Test Reports"](https://art-jen.xenial.com/job/TEST/job/Data-Management/job/TEST-DATA-MANAGEMENT-API/)
+---
+class: dp-regular
+
+# Infrastructure - Integrated Platform
+
+* Cloud-based hosting
+* Logs
+* Monitoring
+* Integrations
+---
+class: dp-regular
+
+# Summary
+
+* Code Delivery is not a Unicorn
+* Project-based investments into Delivery Pipeline
+* Automation is a key
+* DevOps is a set of practices
+* Use Cloud whenever possible
+---
+class: dp-leading, center,middle
+
+# Q/A
+---
+class: dp-leading, center,middle
+
+# Thank you!
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+        var slideshow = remark.create();
+    </script>
+</body>
+
+</html>
