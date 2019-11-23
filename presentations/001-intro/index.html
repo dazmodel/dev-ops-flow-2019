@@ -25,6 +25,10 @@
             background-size: contain;
         }
 
+        .linkedin {
+            float: left !important;
+        }
+
         .dp-regular {
             background: url(https://lh4.googleusercontent.com/EaZPBLy_V_x-YI8DbTVnPZU2HwyVlXBnpKdZlwEtX4LCuxZludUvVCBwz3WoIsR-g1WUxTBiiSZVaEaQU483Eo5T13JDTEUDC_xYx6W7XcbQlX89bfxQjCbc1jhmRgN6JWUG1_VVZcU);
             background-size: contain;
@@ -35,10 +39,32 @@
             font-family: 'Ubuntu Mono';
         }
 
+        .about-ss {
+            min-height: 100%;
+            border-radius: 50%;
+            margin-top: 1.5em;
+        }
+
+        .center-img {
+            text-align: center;
+        }
+
         .digital-music {
             background: url(assets/img/digital-music.png) center no-repeat;
             background-size: contain;
             min-height: 100%;
+        }
+
+        .straight {
+            background: url(assets/img/a-to-b.png) center no-repeat;
+            background-size: contain;
+            min-height: 55%;
+        }
+
+        .agile {
+            background: url(assets/img/agile-a-to-b.png) center no-repeat;
+            background-size: contain;
+            min-height: 63%;
         }
 
         .netflix-complexity {
@@ -48,9 +74,10 @@
         }
 
         .adjuvi {
-            background: url(https://i.pinimg.com/originals/2a/63/20/2a6320ff7268fcf8f3645af0dc251178.jpg) center no-repeat;
+            background: url(https://pbs.twimg.com/media/CRc1Xl0WwAAofbz.png) center no-repeat;
             background-size: contain;
             min-height: 100%;
+            margin-top: -2em;
         }
 
         .devops-loop {
@@ -59,10 +86,20 @@
             min-height: 100%;
         }
 
+        #lvls-of-devops + a {
+            float: left;
+        }
+
+        .dora-logo {
+            width: 100%;
+            height: 30%;
+        }
+
         .dora-2018 {
             background: url(assets/img/dora-2018-sum.png) center no-repeat;
             background-size: contain;
-            min-height: 100%;
+            min-height: 75%;
+            margin-top: -1em;
         }
 
         .remark-slide-content {
@@ -96,6 +133,9 @@
             margin-top: 0em;
             text-align: left;
         }
+        .right-column a {
+            float: right;
+        }
         .right {
             float: right;
             margin-left: 1em;
@@ -103,6 +143,14 @@
         .right-column-img {
             max-width:100%;
             max-height:100%;
+        }
+
+        .img-slight-up {
+            margin-top: -2em;
+        }
+
+        .img-up {
+            margin-top: -5em;
         }
     </style>
 </head>
@@ -119,7 +167,22 @@ Sergii Sinienok<br />
 Cloud Architect @ Dev-Pro.net
 </div>
 ---
-class: dp-regular
+class: dp-leading
+<br />
+<br />
+# Few words about myself
+
+.left-column[
+<div class="center-img">
+    <img class="about-ss" src="assets/img/Sinienok_Sergii_ava-175x175.jpeg"></img>
+</div>
+]
+.right-column[
+* 12+ years in IT
+* Pasioned about enterprise-grade solutions
+* Cloud- and service-oriented mindset
+* <a class="linkedin" href="https://www.linkedin.com/in/sergiisinienok/" title="LinkedIn">LinkedIn</a>
+]
 ---
 class: dp-regular
 
@@ -138,8 +201,8 @@ class: dp-regular
 
 # DevOps - Definition
 
-DevOps is an organizational and cultural movement that aims to increase software delivery velocity, improve service reliability, and build shared ownership among software stakeholders.
-It is not Who (engineer), it is What (Values, Processes, Practices).
+__DevOps__ is an organizational and cultural movement that aims to increase software __delivery velocity__, improve service __reliability__, and build __shared ownership__ among software stakeholders.
+It is __not Who__ (engineer), it __is What__ (Values, Processes, Practices).
 
 * Automation
 * Human to Machine knowledge sharing
@@ -149,23 +212,52 @@ class: dp-regular
 
 # DevOps - The Story Behind
 
+.left-column[
+* If you need software - guess what? You need to build it somehow!
 * The need to standardise and optimize the Software Development Lifecycle (SDLC)
 * Huge demand to formalize SDLC
+]
+.right-column[
+<img src="https://www.sessionlab.com/assets/images/categories/idea.png" class="right-column-img img-up"></img>
+["Session Lab"](https://www.sessionlab.com)
+]
 ---
 class: dp-regular
 
 # Information Technology Infrastructure Library
 
+.left-column[
 * ITIL - ["Great Britain, State As A Service"](https://www.historylearningsite.co.uk/british-politics/civil-service-reforms/).
-* First attempt to take the challenge.
+* First attempt to take the challenge of __predictable__ software delivery.
+]
+.right-column[
+<img src="https://tritec-education.ru/wp-content/uploads/2011/09/help-desk-software-itil-logo_thumb.jpg" class="right-column-img img-up"></img>
+["Tritec Education"](https://tritec-education.ru)
+]
 ---
 class: dp-regular
 
 # The Origins of DevOps
 
-* IT role transformation: Secondary Automate Well Known Processes -> Primary: Digital product, IT as a business.
+* IT role transformation: Automate Well Known Processes (Secondary role) -> Digital product, IT as a business (Primary role).
 * 2009 John Allspaw (Ops) & Paul Hammond (Dev) @ Flickr - ["10 Deploys Per Day Dev and Ops Cooperation at Flickr"](https://www.youtube.com/watch?v=c6tWX48tmAo) ["slideshare"](https://www.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr/10-Ops_job_is_NOT_to)
 * ["DevOps origins: Patrick Debois"](https://devops.com/the-origins-of-devops-whats-in-a-name)
+---
+class: dp-regular
+
+# IT Role - Enterprise and Traditionl Products
+
+Enterprise processes automation: A => B. __The Idea__ remains the same, __details__ are subject to change. Straightforward long term strategy.
+
+<div class="straight"></div>
+---
+class: dp-regular
+
+# IT Role - Agile and Digital Products
+
+Agile: A => B? => B? => B!!! . __The idea itself is a subject of transformation__.
+
+<div class="agile"></div>
 ---
 class: dp-regular
 
@@ -183,18 +275,11 @@ class: dp-regular
 ---
 class: dp-regular
 
-# Why DevOps - recap
-
-* Enterprise processes automation: A => B. Straightforward long term strategy, B is well defined
-* Agile: A => B? => B? => B!!! . Nobody knows what’s B, at the beginning.
----
-class: dp-regular
-
 # Oldschool - "Traditional" SDLC
 
 * Main value of Computers - Business Processes Automation and efficiency
 * Monolith, 3-tier software architecture
-* OOP and Domain Driven Design
+* Waterfall, OOP and Domain Driven Design
 * Software helps the main product to interact with the market
 ---
 class: dp-regular
@@ -226,18 +311,25 @@ class: dp-regular
 class: dp-regular
 
 <div class="adjuvi"></div>
+[https://pbs.twimg.com](https://pbs.twimg.com)
 ---
 class: dp-regular
 
-# Convey Law
+# Conway Law
 
-Organizations which design systems ... are constrained to produce designs which are copies of the communication structures of these organizations.
+.left-column[
+__Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.__
 
-    — M. Conway
+["Melwin Conway's Official Website"](http://www.melconway.com/Home/Conways_Law.html)
+]
+.right-column[
+<img src="https://showme.codes/assets/images/292372-399fdb9f12dcd32b.png" class="right-column-img"></img>
+["Showme Codes blog"](https://showme.codes)
+]
 ---
 class: dp-regular
 
-# Interim Sun Up
+# Conway Law - Consequences For Engineers
 
 * Software architecture drift to micro services
 * Solutions Complexity Increases
@@ -250,11 +342,19 @@ class: dp-regular
 
 class: dp-regular
 
-# Where’s DevOps here?
+# How the hell it is all related to DevOps?!
 
+.left-column[
 * Values
-* Process
-* Practices/Methods
+* Principles
+* Methods
+* Practices
+* Tools
+]
+.right-column[
+<img id="lvls-of-devops" src="https://devopsingh.com/wp-content/uploads/2019/03/5-Levels-of-Understanding-DevOps.jpg" class="right-column-img img-slight-up"></img>
+["DevOpSingh"](https://devopsingh.com)
+]
 ---
 
 class: dp-regular
@@ -272,44 +372,47 @@ class: dp-regular
 * Attracting and retaining talent
 * Establishing your brand as a high-performing organization
 
-(DORA logo)
+<img src="assets/img/dora-logo.png" class="dora-logo"></img>
 ---
 class: dp-regular
 
-# DORA Assesment - State of DevOps Report, 2018
+# DevOps and the industry: DORA Assesment Report, 2018
 
 <div class="dora-2018"></div>
 ---
 class: dp-regular
 
-# DevOps - cross-functional/full-stack teams
+# DevOps, Scrum and Cross-Functional/Full-Stack Teams
 
+* ["Full-stack Team"](https://agilebusinessmanifesto.com/agilebusiness/full-stack-teams-and-moving-fast/) - group of people with the ability, technical knowledge, and the skills to deliver teh solution from its idea to working software. 
 * Scrum Guides: ["Development Team => Team"](https://scrumguide.uservoice.com/forums/241958-general/suggestions/36790429-rename-development-team-to-team-and-remove-sc)
-* The notion of the Full-stack Team
 
+<img src="https://miro.medium.com/max/2400/1*W4QtzCtDSxFU2-Murw-X6A.jpeg" class="dora-logo"></img>
+["Medium"](https://miro.medium.com)
 ---
 class: dp-regular
 
 # What is DevOps - levels-based model
 
-* CAMS Value (Culture, Automation, Measurement, Share Knowledge) - “Culture eats strategy for breakfast"
-* Process: Full-stack teams (devs, ops, qa, etc.), 2 pizza’s teams, Convey law, Agile Ops
-* Practices: Infrastructure as Code, Source control, Continuous Integration/Continuous Delivery, Continuous Monitoring, Config Management, etc.
+* __CAMS Values__ (Culture, Automation, Measurement, Share Knowledge) - “Culture eats strategy for breakfast"
+* __Principles:__ Full-stack teams (devs, ops, qa, etc.), 2 pizza’s teams, Convey law, Agile Ops
+* __Practices:__ Infrastructure as Code, Source control, Continuous Integration/Continuous Delivery, Continuous Monitoring, Config Management, etc.
 ---
 class: dp-regular
 
-# DevOps - Values level
+# DevOps - Values level. CAMS Values
 
-* Culture
-* Automation
-* Measurement
-* Sharing the Knowledge (Communication)
+* __C__ulture
+* __A__utomation
+* __M__easurement
+* __S__haring the Knowledge (Communication)
 ---
 class: dp-regular
 
-# DevOps - Process level
+# DevOps - Principles level
 
 * Agile processes
+* Full-Stack Teams
 * Infrastrucrture Platforms and Cloud Computing
 * Automation Everywhere
 * Continuous Improvements
@@ -326,50 +429,69 @@ class: dp-regular
 
 # Continuous Delivery
 
+.left-column[
 * Predictable delivery on demand
 * Delivery Pipeline. Has value for every teammate involved into delivery.
 * Delivery Pipeline - image, roles, examples.
+]
+.right-column[
+<img src="https://dzone.com/storage/temp/11399338-cd-big.png" class="right-column-img img-up"></img>
+["DZone"](https://dzone.com)
+]
 ---
 class: dp-regular
 
 # Continuous Delivery - Principles
-/// TBD: Add examples for each
 * Repeatable and reliable delivery process
 * Automate everything
-* Everything in a Source Control
 * Feedback and retrospective actions
 * Embedded Quality Control
 * Definition of Done > Done === Released to prod
-* Continuous Delivery Conveyer is a shared responsibility
+* Continuous Delivery Pipeline is a shared responsibility
 * Continuous Improvements
 ---
 class: dp-regular
 
 # Continuous Monitoring - Principles
-/// TBD: Add examples for each
+
+.left-column[
 * Monitoring as a service
 * Centralized and traceable logs
 * Visual Representation
+]
+.right-column[
+<img src="https://www.bdo.com/getattachment/Insights/Assurance/Corporate-Governance/Continuous-Monitoring/BDO-Assurance-Corp-Governance-Practice-Aid-Figure-1.jpg.aspx?width=500&height=370" class="right-column-img"></img>
+["BDO"](https://www.bdo.com)
+]
 ---
 class: dp-regular
 
 # Everything as Code - Principles
 
+.left-column[
 * Code Development and Collaboration practices everywhere
 * Infrastructure as Code, stored in VCS
 * Infrastructure Decomposition
+]
+.right-column[
+<img src="https://archsmarter.com/wp-content/uploads/2014/03/Learn-to-code1.jpg" class="right-column-img img-slight-up"></img>
+["Archsmaster"](https://archsmarter.com)
+]
 ---
 class: dp-regular
 
-# “Base, Service, App” DevOps model
+# “Base, Service, App” DevOps Appliance Model
 
-* Base - OS, Windows, Linux, Runtime, Infrastructure As A Service (Cloud)
-* Service - Webserver, Datasbase, Cache, Logging Infrastructure, Queues, Auth
-* Application - our App’s code
+* __Base__ - OS, Windows, Linux, Runtime, Infrastructure As A Service (Cloud)
+* __Service__ - Webserver, Datasbase, Cache, Logging Infrastructure, Queues, Auth
+* __Application__ - our App’s code
 ---
-class: dp-regular, center
+class: dp-regular
 
-DevOps is an approach to produce digital products. To rephrase, it is not Who (engineer), it is What (Values, Processes, Practices).
+# DevOps - Definition
+
+__DevOps__ is an organizational and cultural movement that aims to increase software __delivery velocity__, improve service __reliability__, and build __shared ownership__ among software stakeholders.
+It is __not Who__ (engineer), it __is What__ (Values, Processes, Practices).
 ---
 class: dp-regular
 
@@ -378,6 +500,7 @@ class: dp-regular
 * Software Engineer with production infrastructure knowledge
 * Infrastructure Engineer
 * Infrastructure Services Engineer
+* Release/Delivery Manager
 ---
 class: dp-regular
 
@@ -423,18 +546,27 @@ class: dp-regular
 
 # DevOps Flow 2019: Practices and Methods
 
-* VCS: Git (Everything as a Code (EaC)). // No abbreviations!!!!!
-* Modern Cloud Providers (EaC, Continuous Monitoring (CM)).
-* CI/CD (Continuous Delivery (CD), CM).
-* Configuration Management (EaC).
-* Infrastructure Provisioning Tools (EaC, CM, CD).
-
-Match to Infrastructure Engineer.
+* VCS: Git (Everything as a Code). // No abbreviations!!!!!
+* Modern Cloud Providers (Everything as a Code, Continuous Monitoring).
+* CI/CD (Continuous Delivery, Continuous Monitoring).
+* Configuration Management (Everything as a Code).
+* Infrastructure Provisioning Tools (Everything as a Code, Continuous Monitoring, Continuous Delivery).
 ---
 class: dp-regular
 
-Summary: DevOps definition, importance of why, we'll teach you how to save the world.
-Ask appropriate questions on DevOps.
+# DevOps - Definition
+
+__DevOps__ is an organizational and cultural movement that aims to increase software __delivery velocity__, improve service __reliability__, and build __shared ownership__ among software stakeholders.
+It is __not Who__ (engineer), it __is What__ (Values, Processes, Practices).
+---
+class: dp-regular
+
+# Summary
+* DevOps is __What__, not __Who__
+* DevOps is here as an answer to __Digital Products challenge__
+* This course will be focused on DevOps __Practices__ and __Tools__
+* This course is mostly aimed to __Infrastructure Engineers__
+* Always ask __what__ does people __mean by DevOps__ :)
 ---
 class: dp-leading, center, middle
 
