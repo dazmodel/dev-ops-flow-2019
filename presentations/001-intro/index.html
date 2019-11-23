@@ -20,18 +20,51 @@
             font-weight: normal;
         }
 
+        .dp-leading {
+            background: url(https://lh5.googleusercontent.com/uWAVfDbVCVkRK-gHxK3QqUpL2dD3C7KWlXHoK_lwUUy430PU_cGv6WTZhWr-_L8gCeOOHrwB3yMz-0Bm01IPcp_dwFHvRZqomxRN8Qiae5FKoJ3i-g7A6gVfSVPOOuc0x6ad5lI-fL8);
+            background-size: contain;
+        }
+
+        .dp-regular {
+            background: url(https://lh4.googleusercontent.com/EaZPBLy_V_x-YI8DbTVnPZU2HwyVlXBnpKdZlwEtX4LCuxZludUvVCBwz3WoIsR-g1WUxTBiiSZVaEaQU483Eo5T13JDTEUDC_xYx6W7XcbQlX89bfxQjCbc1jhmRgN6JWUG1_VVZcU);
+            background-size: contain;
+        }
+
         .remark-code,
         .remark-inline-code {
             font-family: 'Ubuntu Mono';
         }
 
-        .dp-leading {
-            background: url(https://lh5.googleusercontent.com/uWAVfDbVCVkRK-gHxK3QqUpL2dD3C7KWlXHoK_lwUUy430PU_cGv6WTZhWr-_L8gCeOOHrwB3yMz-0Bm01IPcp_dwFHvRZqomxRN8Qiae5FKoJ3i-g7A6gVfSVPOOuc0x6ad5lI-fL8)
+        .digital-music {
+            background: url(assets/img/digital-music.png) center no-repeat;
+            background-size: contain;
+            min-height: 100%;
         }
 
-        .dp-regular {
-            background: url(https://lh4.googleusercontent.com/EaZPBLy_V_x-YI8DbTVnPZU2HwyVlXBnpKdZlwEtX4LCuxZludUvVCBwz3WoIsR-g1WUxTBiiSZVaEaQU483Eo5T13JDTEUDC_xYx6W7XcbQlX89bfxQjCbc1jhmRgN6JWUG1_VVZcU)
+        .netflix-complexity {
+            background: url(https://labs.sogeti.com/wp-content/uploads/2016/11/microservices.gif) center no-repeat;
+            background-size: contain;
+            min-height: 100%;
         }
+
+        .adjuvi {
+            background: url(https://i.pinimg.com/originals/2a/63/20/2a6320ff7268fcf8f3645af0dc251178.jpg) center no-repeat;
+            background-size: contain;
+            min-height: 100%;
+        }
+
+        .devops-loop {
+            background: url(https://www.northcrossgroup.com/images/microsite/devops/devops/devops-infinity.png) center no-repeat;
+            background-size: contain;
+            min-height: 100%;
+        }
+
+        .dora-2018 {
+            background: url(assets/img/dora-2018-sum.png) center no-repeat;
+            background-size: contain;
+            min-height: 100%;
+        }
+
         .remark-slide-content {
             font-size: 22px;
             padding: 4em 2em 2em 2em;
@@ -77,7 +110,7 @@
 <body>
     <textarea id="source">
 
-class: center, middle
+class: dp-leading, center, middle
 
 # DevOps Flow 2019: Intro
 
@@ -86,16 +119,328 @@ Sergii Sinienok<br />
 Cloud Architect @ Dev-Pro.net
 </div>
 ---
-
+class: dp-regular
+---
+class: dp-regular
 
 # Agenda
 
+* The origins of DevOps - the story behind.
+* Traditional vs Digital products
+* 3-Tier Monolith vs Microservices
+* Structure of essential communication
+* Organization structure and DevOps
+* Core DevOps Practices
+* DevOps roles - examples
+* DevOps Flow 2019 - overview
 ---
-class: center,middle
+class: dp-regular
+
+# DevOps - Definition
+
+DevOps is an organizational and cultural movement that aims to increase software delivery velocity, improve service reliability, and build shared ownership among software stakeholders.
+It is not Who (engineer), it is What (Values, Processes, Practices).
+
+* Automation
+* Human to Machine knowledge sharing
+* Teamwork (Dev, Ops, QA, etc.)
+---
+class: dp-regular
+
+# DevOps - The Story Behind
+
+* The need to standardise and optimize the Software Development Lifecycle (SDLC)
+* Huge demand to formalize SDLC
+---
+class: dp-regular
+
+# Information Technology Infrastructure Library
+
+* ITIL - ["Great Britain, State As A Service"](https://www.historylearningsite.co.uk/british-politics/civil-service-reforms/).
+* First attempt to take the challenge.
+---
+class: dp-regular
+
+# The Origins of DevOps
+
+* IT role transformation: Secondary Automate Well Known Processes -> Primary: Digital product, IT as a business.
+* 2009 John Allspaw (Ops) & Paul Hammond (Dev) @ Flickr - ["10 Deploys Per Day Dev and Ops Cooperation at Flickr"](https://www.youtube.com/watch?v=c6tWX48tmAo) ["slideshare"](https://www.slideshare.net/jallspaw/10-deploys-per-day-dev-and-ops-cooperation-at-flickr/10-Ops_job_is_NOT_to)
+* ["DevOps origins: Patrick Debois"](https://devops.com/the-origins-of-devops-whats-in-a-name)
+---
+class: dp-regular
+
+# Why not DEV and OPS separately moving forward?
+
+* Complexity of software increases in magnitude
+* IT became a business itself instead of serving business.
+* Time to Market
+* ITIL efficiency is concerned assuming all the above.
+---
+class: dp-regular
+
+<div class="netflix-complexity"></div>
+
+---
+class: dp-regular
+
+# Why DevOps - recap
+
+* Enterprise processes automation: A => B. Straightforward long term strategy, B is well defined
+* Agile: A => B? => B? => B!!! . Nobody knows what’s B, at the beginning.
+---
+class: dp-regular
+
+# Oldschool - "Traditional" SDLC
+
+* Main value of Computers - Business Processes Automation and efficiency
+* Monolith, 3-tier software architecture
+* OOP and Domain Driven Design
+* Software helps the main product to interact with the market
+---
+class: dp-regular
+
+# Agile - "Digital" products
+
+* Software itself interacts with the market
+* Software IS a product
+---
+class: dp-regular
+
+<div class="digital-music"></div>
+---
+class: dp-regular
+
+# Traditional/Physical VS Digital products - examples
+
+* Traditional: Drinks, Cars, Electricity, Food
+* Digital: Uber, Monobank, Slack, Salesforce, Airbnb
+---
+class: dp-regular
+
+# Traditional vs Digital Companies - 3P Communication
+
+* Processes
+* People
+* Products
+---
+class: dp-regular
+
+<div class="adjuvi"></div>
+---
+class: dp-regular
+
+# Convey Law
+
+Organizations which design systems ... are constrained to produce designs which are copies of the communication structures of these organizations.
+
+    — M. Conway
+---
+class: dp-regular
+
+# Interim Sun Up
+
+* Software architecture drift to micro services
+* Solutions Complexity Increases
+* Software quality degradation - we’re learning how to build digital products
+---
+class: dp-regular
+
+<div class="netflix-complexity"></div>
+---
+
+class: dp-regular
+
+# Where’s DevOps here?
+
+* Values
+* Process
+* Practices/Methods
+---
+
+class: dp-regular
+
+<div class="devops-loop"></div>
+
+---
+class: dp-regular
+
+# DevOps Research And Assessment (DORA)
+
+* Launched in 2016 by Gene Kim, Jez Humble and Dr. Nicole Forsgren
+* The aim is to improve technology and organizational performance
+* Prioritizing improvement efforts
+* Attracting and retaining talent
+* Establishing your brand as a high-performing organization
+
+(DORA logo)
+---
+class: dp-regular
+
+# DORA Assesment - State of DevOps Report, 2018
+
+<div class="dora-2018"></div>
+---
+class: dp-regular
+
+# DevOps - cross-functional/full-stack teams
+
+* Scrum Guides: ["Development Team => Team"](https://scrumguide.uservoice.com/forums/241958-general/suggestions/36790429-rename-development-team-to-team-and-remove-sc)
+* The notion of the Full-stack Team
+
+---
+class: dp-regular
+
+# What is DevOps - levels-based model
+
+* CAMS Value (Culture, Automation, Measurement, Share Knowledge) - “Culture eats strategy for breakfast"
+* Process: Full-stack teams (devs, ops, qa, etc.), 2 pizza’s teams, Convey law, Agile Ops
+* Practices: Infrastructure as Code, Source control, Continuous Integration/Continuous Delivery, Continuous Monitoring, Config Management, etc.
+---
+class: dp-regular
+
+# DevOps - Values level
+
+* Culture
+* Automation
+* Measurement
+* Sharing the Knowledge (Communication)
+---
+class: dp-regular
+
+# DevOps - Process level
+
+* Agile processes
+* Infrastrucrture Platforms and Cloud Computing
+* Automation Everywhere
+* Continuous Improvements
+---
+class: dp-regular
+
+# DevOps - Fundamental Practices
+
+* Continuous Delivery
+* Continuous Monitoring
+* Everything as a Code (Infrastructure, Configs, Docs, etc.)
+---
+class: dp-regular
+
+# Continuous Delivery
+
+* Predictable delivery on demand
+* Delivery Pipeline. Has value for every teammate involved into delivery.
+* Delivery Pipeline - image, roles, examples.
+---
+class: dp-regular
+
+# Continuous Delivery - Principles
+/// TBD: Add examples for each
+* Repeatable and reliable delivery process
+* Automate everything
+* Everything in a Source Control
+* Feedback and retrospective actions
+* Embedded Quality Control
+* Definition of Done > Done === Released to prod
+* Continuous Delivery Conveyer is a shared responsibility
+* Continuous Improvements
+---
+class: dp-regular
+
+# Continuous Monitoring - Principles
+/// TBD: Add examples for each
+* Monitoring as a service
+* Centralized and traceable logs
+* Visual Representation
+---
+class: dp-regular
+
+# Everything as Code - Principles
+
+* Code Development and Collaboration practices everywhere
+* Infrastructure as Code, stored in VCS
+* Infrastructure Decomposition
+---
+class: dp-regular
+
+# “Base, Service, App” DevOps model
+
+* Base - OS, Windows, Linux, Runtime, Infrastructure As A Service (Cloud)
+* Service - Webserver, Datasbase, Cache, Logging Infrastructure, Queues, Auth
+* Application - our App’s code
+---
+class: dp-regular, center
+
+DevOps is an approach to produce digital products. To rephrase, it is not Who (engineer), it is What (Values, Processes, Practices).
+---
+class: dp-regular
+
+# World of DevOps - role examples
+
+* Software Engineer with production infrastructure knowledge
+* Infrastructure Engineer
+* Infrastructure Services Engineer
+---
+class: dp-regular
+
+# Software Engineer with production infrastructure knowledge
+
+* Writes app code
+* Automated Tests
+* Monitoring
+* Infrastructure code.
+* Dev: JS, C#, Java. SRE. Systems Integration Engineer
+
+---
+class: dp-regular
+
+# Infrastructure Engineer
+
+* Write code for Infrastructure as a Service.
+* Provides and maintains infrastructure for Developers.
+* Kubernetes, Ansible Playbooks, Bash :)
+
+---
+class: dp-regular
+
+# Infrastructure Services Engineer
+
+* Writes infrastructure code and maintenance for specific platform services
+* Storage (MongoDB Replica Set)
+* Monitoring (Prometheus as a service)
+* Logging (ELK)
+* etc.
+
+---
+class: dp-regular
+
+# Release/Delivery Manager
+
+* Manages the process of the product’s delivery
+* Identify and track dependencies
+* Manages Systems integration process.
+
+---
+class: dp-regular
+
+# DevOps Flow 2019: Practices and Methods
+
+* VCS: Git (Everything as a Code (EaC)). // No abbreviations!!!!!
+* Modern Cloud Providers (EaC, Continuous Monitoring (CM)).
+* CI/CD (Continuous Delivery (CD), CM).
+* Configuration Management (EaC).
+* Infrastructure Provisioning Tools (EaC, CM, CD).
+
+Match to Infrastructure Engineer.
+---
+class: dp-regular
+
+Summary: DevOps definition, importance of why, we'll teach you how to save the world.
+Ask appropriate questions on DevOps.
+---
+class: dp-leading, center, middle
 
 # Q/A
 ---
-class: center,middle
+class: dp-leading, center, middle
 
 # Thank you!
     </textarea>
